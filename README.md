@@ -14,17 +14,31 @@ Implementation of AES and PRESENT using c++ for software and verilog for FPGA ba
 
 # _REPO LAYOUT_
 
+## Repository layout
+
+```text
 AES_PRESENT_PROJECT/
 ├─ AES/
-│ ├─ aes.h, aes.cpp # AES core (S-box, MixColumns, KeyExpansion, CTR helpers)
-│ ├─ hexutils.h, hexutils.cpp # Hex and I/O helpers
-│ ├─ main.cpp # CLI entry for AES
-│ └─ input/ sample.bmp tiny.bin large.bin
+│  ├─ aes.h
+│  ├─ aes.cpp                 # AES core (S-box, MixColumns, KeyExpansion, CTR helpers)
+│  ├─ hexutils.h
+│  ├─ hexutils.cpp            # Hex and I/O helpers
+│  ├─ main.cpp                # CLI entry for AES
+│  └─ input/
+│     ├─ sample.bmp
+│     ├─ tiny.bin
+│     └─ large.bin
 └─ PRESENT/
-├─ present.h, present.cpp # PRESENT core (S-box/pLayer, 80/128-bit KSchedule, CTR)
-├─ hexutils.h, hexutils.cpp
-├─ main.cpp # CLI entry for PRESENT
-└─ input/ sample.bmp tiny.bin large.bin
+   ├─ present.h
+   ├─ present.cpp             # PRESENT core (S-box/pLayer, 80/128-bit KSchedule, CTR)
+   ├─ hexutils.h
+   ├─ hexutils.cpp
+   ├─ main.cpp                # CLI entry for PRESENT
+   └─ input/
+      ├─ sample.bmp
+      ├─ tiny.bin
+      └─ large.bin
+
 
 # _AES CLI_
 
@@ -112,3 +126,4 @@ cmp -s ./input/sample.bmp ./out/sample_dec.bmp && echo "IDENTICAL"
     •	31 rounds + final AddRoundKey
     •	80-bit key schedule (rotate-61, S-box top nibble, round-counter XOR)
     •	Controller FSM: IDLE → LOAD → ROUND[1..31] → FINAL_ARK → DONE
+```
