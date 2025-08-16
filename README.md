@@ -2,15 +2,13 @@
 
 Implementation of AES and PRESENT using c++ for software and verilog for FPGA based designs
 
-# _FEATURES_
+# FEATURES
 
 – AES (128/192/256) and PRESENT (80/128) block ciphers
 – CTR mode for arbitrary files and BMP images (no padding required)
 – Single-thread and multi-thread paths (std::thread)
 – Built-in performance telemetry: wall/CPU time, peak RSS, time/KB, relative energy proxy
 – Known-Answer Tests (NIST AES; PRESENT spec vectors)
-
-# _REPO LAYOUT_
 
 # Repository layout
 
