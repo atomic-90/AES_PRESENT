@@ -126,4 +126,22 @@ cmp -s ./input/sample.bmp ./out/sample_dec.bmp && echo "IDENTICAL"
     •	31 rounds + final AddRoundKey
     •	80-bit key schedule (rotate-61, S-box top nibble, round-counter XOR)
     •	Controller FSM: IDLE → LOAD → ROUND[1..31] → FINAL_ARK → DONE
+
+## How to run (Vivado)
+
+Create project → add all .v sources and the testbench (tb__combo.v).
+
+Set top to tb_aes_fsm_combo (or tb_present_combo).
+
+Simulation → Run → check that ct_out/out_block match the KAT values.
+
+Use two cursors to measure cycles per block between start_* and *_done.
+
+Synthesis (then Open Synthesized Design) → Reports:
+
+Utilization (LUT/FF/BRAM/DSP)
+
+Timing Summary (WNS → Fmax)
+
+Power (vectorless; for tighter numbers, run SAIF/VCD switching activity)
 ```
