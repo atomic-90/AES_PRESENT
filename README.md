@@ -1,5 +1,3 @@
-## SOFTWARE PART ==================================================================
-
 ### AES_PRESENT
 
 Implementation of AES and PRESENT using c++ for software and verilog for FPGA based designs
@@ -14,7 +12,7 @@ Implementation of AES and PRESENT using c++ for software and verilog for FPGA ba
 
 # _REPO LAYOUT_
 
-## Repository layout
+# Repository layout
 
 ```text
 AES_PRESENT_PROJECT/
